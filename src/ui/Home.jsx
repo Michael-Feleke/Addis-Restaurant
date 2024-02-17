@@ -1,3 +1,5 @@
+import CreateUser from "../features/user/CreateUser";
+
 function Home() {
   return (
     <div>
@@ -6,6 +8,7 @@ function Home() {
         <br />
         <span className="text-yellow-500">From our kitchen to your table.</span>
       </h1>
+      <CreateUser />
     </div>
   );
 }
