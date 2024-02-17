@@ -6,7 +6,6 @@
   justify-content: center;
   margin: 0;
   overflow: hidden;
-  background: radial-gradient(circle at center, #cc9933, #333300);
 }
 .loadingContainer:before {
   content: "";
