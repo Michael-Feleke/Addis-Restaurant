@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Form, json } from "react-router-dom";
+import { Form, json, redirect } from "react-router-dom";
+import { createOrder } from "../../services/apiRestaurant";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -70,7 +71,7 @@ function CreateOrder() {
           <label htmlFor="priority">Want to yo give your order priority?</label>
         </div>
 
-        <input type="hidden" name="cart" value={cart} />
+        <input type="hidden" name="cart" value={JSON.stringify(cart)} />
 
         <div>
           <button>Order now</button>
@@ -89,6 +90,10 @@ export async function action({ request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === "on",
   };
+
+  const newOrder = await createOrder(order);
+
+  return redirect(`/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
