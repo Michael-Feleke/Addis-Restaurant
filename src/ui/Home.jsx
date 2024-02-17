@@ -7,13 +7,13 @@ function Home() {
         <h1 className="text-stone-700 font-semibold text-center mb-8 text-xl md:text-5xl">
           Savor the Flavors.
           <br />
-          <span className="text-yellow-500">
+          <span className="text-yellow-400">
             From our kitchen to your table.
           </span>
         </h1>
         <CreateUser />
       </div>
-      <div className="flex flex-col justify-center items-center w-[500px] h-[500px] bg-yellow-500 rounded-full overflow-hidden">
+      <div className="flex flex-col justify-center items-center w-[500px] h-[500px] bg-yellow-400 rounded-full overflow-hidden">
         <p className="uppercase font-bold text-3xl text-slate-700">Addis</p>
         <img src="./public/chefs.png" alt="chefs" className="my-3" />
         <p className="uppercase font-bold text-3xl text-slate-700">

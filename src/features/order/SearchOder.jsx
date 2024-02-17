@@ -15,7 +15,7 @@ function SearchOder() {
       <div className="relative">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
           <svg
-            className="w-4 h-4 text-gray-500 dark:text-gray-400"
+            className="w-4 h-4 text-gray-400 dark:text-gray-400"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -33,13 +33,14 @@ function SearchOder() {
         <input
           type="search"
           id="default-search"
-          className="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-transparent dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+          className="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-transparent dark:border-gray-600 dark:placeholder-gray-500 dark:focus:ring-yellow-400 dark:focus:border-yellow-400"
           placeholder="Search by order number"
         />
 
         <button
           type="submit"
-          className="text-grey-900 absolute end-2.5 bottom-2.5 bg-yellow-500 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-yellow-500 dark:hover:bg-yellow-500 dark:focus:ring-yellow-500"
+          className="text-grey-900 absolute end-2.5 bottom-2.5 bg-yellow-400  focus:ring-4
+          hover:bg-yellow-300 transition-all focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-yellow-400 dark:hover:bg-yellow-400 dark:focus:ring-yellow-400"
           onChange={(e) => setQuery(e.target.value)}
         >
           Search

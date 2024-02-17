@@ -7,7 +7,7 @@ function Header() {
     <header className="border-b-gray-200 border-b-2 uppercase px-4 py-3 flex justify-around items-center">
       <Link to="/" className="tracking-widest">
         Addis
-        <span className="text-yellow-500"> Restaurant</span>
+        <span className="text-yellow-400"> Restaurant</span>
       </Link>
       <SearchOder />
       <div className="flex items-center justify-between space-x-10">
