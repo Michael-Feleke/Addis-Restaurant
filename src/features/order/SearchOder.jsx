@@ -33,7 +33,7 @@ function SearchOder() {
         <input
           type="search"
           id="default-search"
-          className="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-transparent dark:border-gray-600 dark:placeholder-gray-500 dark:focus:ring-yellow-400 dark:focus:border-yellow-400"
+          className="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none dark:border-gray-600 dark:placeholder-gray-500  "
           placeholder="Search by order number"
         />
 
