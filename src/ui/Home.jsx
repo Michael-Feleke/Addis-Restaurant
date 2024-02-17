@@ -2,7 +2,7 @@ import CreateUser from "../features/user/CreateUser";
 
 function Home() {
   return (
-    <div className="flex justify-around items-center mx-16  h-full ">
+    <div className="flex justify-around items-center mx-16   space-x-[100px] h-full ">
       <div>
         <h1 className="text-stone-700 font-semibold text-center mb-8 text-xl md:text-5xl">
           Savor the Flavors.

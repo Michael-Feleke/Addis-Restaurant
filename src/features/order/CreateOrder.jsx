@@ -11,7 +11,7 @@ import { createOrder } from "../../services/apiRestaurant";
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str
+    str,
   );
 
 const fakeCart = [
@@ -48,7 +48,7 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
+    <div className="mx-auto max-w-xl">
       <h2>Ready to order? Let's go!</h2>
 
       <Form method="POST">
