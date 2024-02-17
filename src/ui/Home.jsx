@@ -2,7 +2,7 @@ import CreateUser from "../features/user/CreateUser";
 
 function Home() {
   return (
-    <div className="flex justify-around items-center m-16  ">
+    <div className="flex justify-around items-center mx-16  h-full ">
       <div>
         <h1 className="text-stone-700 font-semibold text-center mb-8 text-xl md:text-5xl">
           Savor the Flavors.
@@ -13,8 +13,12 @@ function Home() {
         </h1>
         <CreateUser />
       </div>
-      <div>
-        <img src="./public/chefs.png" alt="chefs" className="w-96" />
+      <div className="flex flex-col justify-center items-center w-[500px] h-[500px] bg-yellow-500 rounded-full overflow-hidden">
+        <p className="uppercase font-bold text-3xl text-slate-700">Addis</p>
+        <img src="./public/chefs.png" alt="chefs" className="my-3" />
+        <p className="uppercase font-bold text-3xl text-slate-700">
+          Restaurant
+        </p>
       </div>
     </div>
   );
