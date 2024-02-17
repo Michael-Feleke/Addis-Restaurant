@@ -7,6 +7,8 @@ import {
   useNavigation,
 } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
+import Button from "../../ui/Button";
+
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -123,12 +125,11 @@ function CreateOrder() {
 
         <div>
           {/* Submit button */}
-          <button
+          <Button
             disabled={isCreatingOrder}
-            className="bg-yellow-400 uppercase font-semibold text-stone-800 py-3 px-4 inline-block tracking-wide rounded-full hover:bg-yellow-300 transition-all duration-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:focus-ring-offset-2 disabled:cursor-not-allowed"
           >
             {isCreatingOrder ? "Placing order..." : "Order now"}
-          </button>
+          </Button>
         </div>
       </Form>
     </div>

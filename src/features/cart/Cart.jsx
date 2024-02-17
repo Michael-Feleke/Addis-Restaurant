@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BackButton from "../../ui/BackButton";
 
 const fakeCart = [
   {
@@ -35,12 +36,7 @@ function Cart() {
         <Link to="/order/new">Order pizzas</Link>
         <button>Clear cart</button>
       </div>
-      <Link
-        to="/menu"
-        className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-      >
-        &larr; Back to menu
-      </Link>
+      <BackButton to="/menu">&larr; Back to menu</BackButton>
     </div>
   );
 }
