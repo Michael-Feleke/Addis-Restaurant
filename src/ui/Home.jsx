@@ -13,12 +13,12 @@ function Home() {
         </h1>
         <CreateUser />
       </div>
-      <div className="flex flex-col justify-center items-center w-[500px] h-[500px] bg-yellow-400 rounded-full overflow-hidden">
-        <p className="uppercase font-bold text-3xl text-slate-700">Addis</p>
-        <img src="./public/chefs.png" alt="chefs" className="my-3" />
-        <p className="uppercase font-bold text-3xl text-slate-700">
-          Restaurant
-        </p>
+      <div className="flex flex-col justify-center items-center w-96 h-96 bg-yellow-400 rounded-full overflow-hidden shadow-lg">
+        <img
+          src="./public/chefs.png"
+          alt="chefs"
+          className="my-3 w-80 h-80 object-cover rounded-full border-8 border-white"
+        />
       </div>
     </div>
   );
