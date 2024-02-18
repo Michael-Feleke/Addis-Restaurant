@@ -30,7 +30,7 @@ function Cart() {
   const cart = fakeCart;
 
   return (
-    <div>
+    <div className="bg-gray-500">
       <h2>Your cart, %NAME%</h2>
 
       <div>

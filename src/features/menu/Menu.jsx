@@ -7,7 +7,7 @@ function Menu() {
   const menu = useLoaderData();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-10 h-full">
       <MenuNav />
       <ul className="grid grid-cols-3 gap-12 max-h-full">
         {menu.map((pizza) => (

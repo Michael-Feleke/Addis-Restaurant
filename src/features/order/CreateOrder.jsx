@@ -9,11 +9,10 @@ import {
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 
-
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str,
+    str
   );
 
 const fakeCart = [
@@ -125,9 +124,7 @@ function CreateOrder() {
 
         <div>
           {/* Submit button */}
-          <Button
-            disabled={isCreatingOrder}
-          >
+          <Button disabled={isCreatingOrder}>
             {isCreatingOrder ? "Placing order..." : "Order now"}
           </Button>
         </div>

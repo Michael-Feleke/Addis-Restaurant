@@ -10,9 +10,9 @@ function AppLayout() {
   return (
     <div className="grid h-screen grid-rows-[auto,1fr,auto]">
       {isLoading && <Loader />}
-      <Header />
-      <div>
-        <main className=" overflow-scroll flex items-center h-full justify-center">
+      <Header className="mb-96" />
+      <div className="overflow-scroll ">
+        <main className="flex items-center justify-center h-full ">
           <Outlet />
         </main>
       </div>
