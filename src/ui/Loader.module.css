@@ -6,6 +6,7 @@
   justify-content: center;
   margin: 0;
   overflow: hidden;
+  z-index: 10000;
 }
 .loadingContainer:before {
   content: "";
