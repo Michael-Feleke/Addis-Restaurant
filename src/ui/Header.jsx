@@ -4,7 +4,7 @@ import Username from "../features/user/Username";
 
 function Header() {
   return (
-    <header className="border-b-gray-200 border-b-2 uppercase px-4 py-3 flex justify-around items-center font-pizza bg-slate-900">
+    <header className="  uppercase px-16 py-6 flex justify-around items-center font-pizza bg-slate-900">
       <Link
         to="/"
         className="tracking-widest font-semibold text-2xl text-white"
