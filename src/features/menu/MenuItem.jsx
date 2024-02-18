@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+import Button from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 
 function MenuItem({ pizza }) {
@@ -5,12 +7,35 @@ function MenuItem({ pizza }) {
 
   return (
     <li>
-      <img src={imageUrl} alt={name} />
-      <div>
-        <p>{name}</p>
-        <p>{ingredients.join(", ")}</p>
-        <div>
-          {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
+      <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 ">
+        <div className="relative mx-4 mt-4  text-gray-700 bg-white bg-clip-border rounded-xl">
+          <img
+            src={imageUrl}
+            alt={name}
+            className={`object-cover w-full h-full ${soldOut ? "opacity-70 grayscale" : ""}`}
+          />
+        </div>
+        <div className="p-6 h-32">
+          <div className="flex items-center justify-between mb-2">
+            <p className="block font-sans text-base antialiased font-bold leading-relaxed text-blue-gray-900">
+              {name}
+            </p>
+            <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+              {!soldOut ? (
+                <p>{formatCurrency(unitPrice)}</p>
+              ) : (
+                <p className="text-sm uppercase font-medium text-stone-500 line-through">
+                  Sold out
+                </p>
+              )}
+            </p>
+          </div>
+          <p className="block italic text-gray-700 font-sans text-md antialiased font-normal leading-normal opacity-75 capitalize">
+            {ingredients.join(", ")}
+          </p>
+        </div>
+        <div className="p-6 pt-0 text-center">
+          <Button>Add to cart</Button>
         </div>
       </div>
     </li>
