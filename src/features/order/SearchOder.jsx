@@ -7,7 +7,8 @@ function SearchOder() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigation(`/order/${query}`);
+
+    query && navigation(`/order/${query}`);
   };
 
   return (
