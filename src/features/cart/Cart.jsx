@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import BackButton from "../../ui/BackButton";
+import Button from "../../ui/Button";
 
 const fakeCart = [
   {
@@ -33,8 +34,8 @@ function Cart() {
       <h2>Your cart, %NAME%</h2>
 
       <div>
-        <Link to="/order/new">Order pizzas</Link>
-        <button>Clear cart</button>
+        <Button to="/order/new">Order pizzas</Button>
+        <Button>Clear cart</Button>
       </div>
       <BackButton to="/menu">&larr; Back to menu</BackButton>
     </div>
