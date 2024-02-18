@@ -76,7 +76,9 @@
   box-shadow: 0.5vmin 2.5vmin 0 #cc333f;
 }
 .loadingContainer .pizza .slice:nth-of-type(4n):after {
-  box-shadow: 0.5vmin 2.5vmin 0 #cc333f, 1.5vmin 5vmin 0 #cc333f;
+  box-shadow:
+    0.5vmin 2.5vmin 0 #cc333f,
+    1.5vmin 5vmin 0 #cc333f;
 }
 .loadingContainer .pizza .slice:nth-of-type(1) {
   transform: rotate(-27.75deg);
