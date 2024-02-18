@@ -41,7 +41,7 @@ function CreateUser() {
           </div>
         </div>
 
-        {username !== "" && (
+        {username.length > 2 && (
           <div>
             <Button>Start orderding</Button>
           </div>
