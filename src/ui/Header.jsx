@@ -4,14 +4,17 @@ import Username from "../features/user/Username";
 
 function Header() {
   return (
-    <header className="border-b-gray-200 border-b-2 uppercase px-4 py-3 flex justify-around items-center font-pizza">
-      <Link to="/" className="tracking-widest font-semibold text-2xl">
+    <header className="border-b-gray-200 border-b-2 uppercase px-4 py-3 flex justify-around items-center font-pizza bg-slate-900">
+      <Link
+        to="/"
+        className="tracking-widest font-semibold text-2xl text-white"
+      >
         Addis
         <span className="text-yellow-400"> Restaurant</span>
       </Link>
       <SearchOder />
       <div className="flex items-center justify-between space-x-10">
-        <div className="relative py-2">
+        <div className="relative py-2 text-white">
           <div className="t-0 absolute left-3">
             <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
               5
