@@ -31,12 +31,12 @@ function Cart() {
   const cart = fakeCart;
 
   return (
-    <div className=" min-w-[50%]">
-      <h2 className=" text-xl font-semibold">Your cart, %NAME%</h2>
+    <div className="min-w-[50%] bg-white p-6 rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold">Your cart, %NAME%</h2>
 
       <ul className="divide-y divide-stone-200 border-b mt-3">
-        {cart.map((item) => (
-          <CartItem item={item} key={item.key} />
+        {cart.map((item, index) => (
+          <CartItem item={item} key={index} />
         ))}
       </ul>
 
