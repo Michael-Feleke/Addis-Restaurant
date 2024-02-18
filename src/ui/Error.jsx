@@ -5,7 +5,7 @@ function NotFound() {
   const error = useRouteError();
 
   return (
-    <div>
+    <div className="space-y-4 mt-48 flex flex-col items-center justify-center">
       <h1>Something went wrong 😢</h1>
       <p>{error.data || error.message}</p>
       <BackButton to="-1">&larr; Go back</BackButton>
