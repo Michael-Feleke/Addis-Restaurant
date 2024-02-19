@@ -2,52 +2,44 @@ import { Link } from "react-router-dom";
 import BackButton from "../../ui/BackButton";
 import Button from "../../ui/Button";
 import CartItem from "./CartItem";
-import { useSelector } from "react-redux";
-import { getCart } from "./cartSlice";
-
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: "Mediterranean",
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: "Vegetale",
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: "Spinach and Mushroom",
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart, getCart } from "./cartSlice";
+import EmptyCart from "./EmptyCart";
 
 function Cart() {
   const cart = useSelector(getCart);
   const { username } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  function handleClearCart() {
+    dispatch(clearCart());
+  }
 
   return (
     <div className="min-w-[50%] bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold">Your cart, {username}</h2>
+      <h2 className="text-xl font-semibold">
+        {cart.length === 0
+          ? `Your cart is empty ${username}. Please back to menu and add some items to start ordering!`
+          : `Your cart, ${username}`}
+      </h2>
 
       <ul className="divide-y divide-stone-200 border-b mt-3">
         {cart.map((item, index) => (
           <CartItem item={item} key={index} />
         ))}
       </ul>
+      {cart.length === 0 ? (
+        ""
+      ) : (
+        <div className="mt-6 space-x-16 mb-12 flex items-center justify-center">
+          <Button to="/order/new">Order pizzas</Button>
+          <Button type="secondary" onClick={handleClearCart}>
+            Clear cart
+          </Button>
+        </div>
+      )}
 
-      <div className="mt-6 space-x-16 mb-12 flex items-center justify-center">
-        <Button to="/order/new">Order pizzas</Button>
-        <Button type="secondary">Clear cart</Button>
-      </div>
-      <div className="text-center">
+      <div className="text-center mt-6">
         <BackButton to="/menu">&larr; Back to menu</BackButton>
       </div>
     </div>
