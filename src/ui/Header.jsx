@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import SearchOder from "../features/order/SearchOder";
 import Username from "../features/user/Username";
 import { Tooltip } from "@material-tailwind/react";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const totoalCartQuantity = useSelector((state) =>
+    state.cart.cart.reduce((sum, item) => sum + item.quantity, 0)
+  );
+
   return (
     <header className="  uppercase px-16 py-6 flex justify-around items-center font-pizza bg-slate-900">
       <Link
@@ -20,7 +25,7 @@ function Header() {
             <div className="relative py-2 text-white cursor-pointer">
               <div className="t-0 absolute left-3">
                 <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
-                  5
+                  {totoalCartQuantity}
                 </p>
               </div>
               <svg
