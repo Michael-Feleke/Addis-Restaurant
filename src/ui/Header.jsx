@@ -9,7 +9,8 @@ import {
 } from "../features/cart/cartSlice";
 
 function Header() {
-  const totoalCartQuantity = useSelector(getTotalCartQuantity);
+  const totalCartQuantity = useSelector(getTotalCartQuantity);
+  const totalCartPrice = useSelector(getTotalCartPrice);
 
   return (
     <header className="  uppercase px-16 py-6 flex justify-around items-center font-pizza bg-slate-900">
@@ -23,11 +24,14 @@ function Header() {
       <SearchOder />
       <div className="flex items-center justify-between space-x-10">
         <Link to="/cart">
-          <Tooltip content="25$" placement="bottom">
+          <Tooltip
+            content={`${totalCartQuantity === 0 ? "Add items to your cart and start ordering" : `${totalCartQuantity} ${totalCartQuantity === 1 ? "item" : "items"} in your cart, $${totalCartPrice}`}`}
+            placement="bottom"
+          >
             <div className="relative py-2 text-white cursor-pointer">
               <div className="t-0 absolute left-3">
                 <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
-                  {totoalCartQuantity}
+                  {totalCartQuantity}
                 </p>
               </div>
               <svg
