@@ -3,6 +3,7 @@ import BackButton from "../../ui/BackButton";
 import Button from "../../ui/Button";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
+import { getCart } from "./cartSlice";
 
 const fakeCart = [
   {
@@ -29,7 +30,7 @@ const fakeCart = [
 ];
 
 function Cart() {
-  const cart = fakeCart;
+  const cart = useSelector(getCart);
   const { username } = useSelector((state) => state.user);
 
   return (

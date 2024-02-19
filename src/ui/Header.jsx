@@ -25,7 +25,7 @@ function Header() {
       <div className="flex items-center justify-between space-x-10">
         <Link to="/cart">
           <Tooltip
-            content={`${totalCartQuantity === 0 ? "Add items to your cart and start ordering" : `${totalCartQuantity} ${totalCartQuantity === 1 ? "item" : "items"} in your cart, $${totalCartPrice}. Click to order us!`}`}
+            content={`${totalCartQuantity === 0 ? "Add items to your cart and start ordering!" : `${totalCartQuantity} ${totalCartQuantity === 1 ? "item" : "items"} in your cart, $${totalCartPrice}. Click to order us!`}`}
             placement="bottom"
           >
             <div className="relative py-2 text-white cursor-pointer">
