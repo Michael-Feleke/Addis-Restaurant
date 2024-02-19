@@ -52,6 +52,10 @@ function Header() {
           </Tooltip>
         </Link>
 
+        {totalCartQuantity && (
+          <div className="text-white">${totalCartPrice}</div>
+        )}
+
         <Username />
       </div>
     </header>

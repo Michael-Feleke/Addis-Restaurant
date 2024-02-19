@@ -10,7 +10,10 @@ function DeleteItem({ id }) {
   }
 
   return (
-    <Button onClick={handleDeleteItem} className="bg-red-500 rounded-full">
+    <Button
+      onClick={handleDeleteItem}
+      className="bg-red-400 rounded-full text-slate-700"
+    >
       Delete
     </Button>
   );
