@@ -41,7 +41,7 @@ function SearchOder() {
           type="search"
           id="default-search"
           className="block min-w-[400px] p-4 ps-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
-          placeholder="Search order ..."
+          placeholder="Search by order# ..."
           onChange={(e) => setQuery(e.target.value)}
         />
         <button
