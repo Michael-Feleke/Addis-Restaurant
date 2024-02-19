@@ -51,7 +51,7 @@ function MenuItem({ pizza }) {
         </div>
         <div className="p-6 pt-0 text-center">
           <Button onClick={handleAddToCart} disabled={soldOut}>
-            Add to cart
+            {soldOut ? "Sold out" : "Add to cart"}
           </Button>
         </div>
       </div>
