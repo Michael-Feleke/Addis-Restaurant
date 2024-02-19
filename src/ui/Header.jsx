@@ -3,11 +3,13 @@ import SearchOder from "../features/order/SearchOder";
 import Username from "../features/user/Username";
 import { Tooltip } from "@material-tailwind/react";
 import { useSelector } from "react-redux";
+import {
+  getTotalCartPrice,
+  getTotalCartQuantity,
+} from "../features/cart/cartSlice";
 
 function Header() {
-  const totoalCartQuantity = useSelector((state) =>
-    state.cart.cart.reduce((sum, item) => sum + item.quantity, 0)
-  );
+  const totoalCartQuantity = useSelector(getTotalCartQuantity);
 
   return (
     <header className="  uppercase px-16 py-6 flex justify-around items-center font-pizza bg-slate-900">
