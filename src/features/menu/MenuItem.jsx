@@ -5,6 +5,16 @@ import { formatCurrency } from "../../utils/helpers";
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
+  function handleAddToCart() {
+    const newItem = {
+      id,
+      name,
+      unitPrice,
+      quantity: 1,
+      totalPrice: unitPrice * 1,
+    };
+  }
+
   return (
     <li>
       <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 ">
@@ -35,7 +45,9 @@ function MenuItem({ pizza }) {
           </p>
         </div>
         <div className="p-6 pt-0 text-center">
-          <Button>Add to cart</Button>
+          <Button onClick={handleAddToCart} disabled={soldOut}>
+            Add to cart
+          </Button>
         </div>
       </div>
     </li>
