@@ -9,36 +9,14 @@ import {
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import { useSelector } from "react-redux";
+import { getCart } from "../cart/cartSlice";
+import BackButton from "../../ui/BackButton";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
     str
   );
-
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: "Mediterranean",
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: "Vegetale",
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: "Spinach and Mushroom",
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
 
 function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
@@ -48,7 +26,21 @@ function CreateOrder() {
 
   const formErrors = useActionData();
 
-  const cart = fakeCart;
+  const cart = useSelector(getCart);
+
+  if (!cart.length)
+    return (
+      <div className="min-w-[50%] bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold">
+          {cart.length === 0
+            ? `Your cart is empty ${username}. Please back to menu and add some items to start ordering!`
+            : `Your cart, ${username}`}
+        </h2>
+        <div className="text-center mt-6">
+          <BackButton to="/menu">&larr; Back to menu</BackButton>
+        </div>
+      </div>
+    );
 
   return (
     <div className="mx-auto h-96 max-w-xl ">
@@ -150,14 +142,13 @@ export async function action({ request }) {
     priority: data.priority === "on",
   };
 
-  const newOrder = await createOrder(order);
-
   const errors = {};
   if (!isValidPhone(order.phone))
     errors.phone =
       "Please give us your correct phone number.We might need it to contact you!";
 
   if (Object.keys(errors).length > 0) return errors;
+  const newOrder = await createOrder(order);
 
   return redirect(`/order/${newOrder.id}`);
 }
