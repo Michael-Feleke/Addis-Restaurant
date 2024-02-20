@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
 import { Button } from "@material-tailwind/react";
+import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
@@ -55,7 +56,10 @@ function MenuItem({ pizza }) {
 
         <div className="p-6 pt-0 text-center">
           {isInCart ? (
-            <DeleteItem id={id} />
+            <div className="flex gap-4 justify-center items-center">
+              <UpdateItemQuantity currentQuantity={currentQuantity} id={id} />
+              <DeleteItem id={id} />
+            </div>
           ) : (
             <Button
               className="bg-yellow-400 rounded-full text-black "
