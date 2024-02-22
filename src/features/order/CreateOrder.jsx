@@ -165,6 +165,15 @@ function CreateOrder() {
 
         {/* Hidden input for cart */}
         <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+        <input
+          type="hidden"
+          name="position"
+          value={
+            position.longitude && position.latitude
+              ? `${position.latitude},${position.longitude}`
+              : ""
+          }
+        />
 
         <div className="text-center">
           {/* Submit button */}
