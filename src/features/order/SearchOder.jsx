@@ -12,7 +12,7 @@ function SearchOder() {
   };
 
   return (
-    <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
+    <form className="w-full px-4 mx-auto" onSubmit={handleSubmit}>
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -40,13 +40,13 @@ function SearchOder() {
         <input
           type="search"
           id="default-search"
-          className="block min-w-[400px] p-4 ps-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
+          className="block w-full  p-2 ps-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
           placeholder="Search by order# ..."
           onChange={(e) => setQuery(e.target.value)}
         />
         <button
           type="submit"
-          className="text-white absolute end-2.5 bottom-2.5 bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          className="text-black absolute end-2.5 bottom-[2px] right-[-1px] bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
         >
           Search
         </button>

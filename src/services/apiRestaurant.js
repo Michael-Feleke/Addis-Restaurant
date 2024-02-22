@@ -28,11 +28,17 @@ export async function createOrder(newOrder) {
       },
     });
 
-    if (!res.ok) throw Error();
+    if (!res.ok) {
+      const errorMessage = `Failed to create order. Status: ${res.status}, ${res.statusText}`;
+      throw new Error(errorMessage);
+    }
+
     const { data } = await res.json();
     return data;
-  } catch {
-    throw Error("Failed creating your order");
+  } catch (error) {
+    // Log the error for debugging purposes
+    console.error("Error creating order:", error);
+    throw new Error("Failed to create order. Please try again later.");
   }
 }
 
