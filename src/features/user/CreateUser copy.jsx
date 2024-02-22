@@ -19,11 +19,11 @@ function CreateUser() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-4 text-md text-center">
+      <p className="mb-10 text-lg">
         Welcome! We're thrilled to have you here! <br /> Please start by telling
         us your name:
       </p>
-      <div className="flex flex-col space-y-8 mb-8 items-center justify-center ">
+      <div className="flex space-x-12  h-16">
         <div className="w-72">
           {/* Username input */}
           <div className="relative w-full min-w-[200px] h-10">
