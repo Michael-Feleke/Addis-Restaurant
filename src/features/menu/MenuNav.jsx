@@ -8,44 +8,44 @@ function MenuNav() {
               <div className="flex flex-wrap items-center justify-center space-x-2">
                 <a
                   href="#"
-                  className="tracking-wide bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="tracking-wide bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium hover:border-l-2 hover:border-yellow-400 border-l-2 border-yellow-400"
                   aria-current="page"
                 >
                   VEGETARIAN ENTREE
                 </a>
                 <a
                   href="#"
-                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:border-l-2 hover:border-yellow-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   BEEF ENTREE
                 </a>
                 <a
                   href="#"
-                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className=" hover:border-l-2 hover:border-yellow-400 tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   LAMB ENTREE
                 </a>
                 <a
                   href="#"
-                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="hover:border-l-2 hover:border-yellow-400 tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   CHICKEN ENTREE
                 </a>
                 <a
                   href="#"
-                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="hover:border-l-2 hover:border-yellow-400 tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   MEAT COMBINATION
                 </a>
                 <a
                   href="#"
-                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="hover:border-l-2 hover:border-yellow-400 tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   PASTA & RICE
                 </a>
                 <a
                   href="#"
-                  className="tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  className="hover:border-l-2 hover:border-yellow-400 tracking-wide text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >
                   DRINKS
                 </a>
