@@ -58,14 +58,14 @@ function CreateOrder() {
     );
 
   return (
-    <div className="mx-auto max-w-xl h-full mt-20 ">
-      <h2 className="text-xl text-center font-bold text-gray-900 mb-4">
+    <div className="mx-auto max-w-xl h-full medium:h-96 medium:mt-0 mt-20 ">
+      <h2 className="text-xl medium:text-2xl text-center font-bold text-gray-900 mb-4">
         Ready to order? Let's go!
       </h2>
 
       <Form
         method="POST"
-        className="space-y-8  border-2 bg-white shadow-md rounded-md p-6"
+        className="space-y-8 medium:space-y-10  border-2 bg-white shadow-md rounded-md p-6"
       >
         <div>
           {/* Username input */}
