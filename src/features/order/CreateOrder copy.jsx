@@ -58,8 +58,8 @@ function CreateOrder() {
     );
 
   return (
-    <div className="mx-auto max-w-xl h-full mt-20 ">
-      <h2 className="text-xl text-center font-bold text-gray-900 mb-4">
+    <div className="mx-auto h-96 max-w-xl ">
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">
         Ready to order? Let's go!
       </h2>
 
@@ -67,9 +67,9 @@ function CreateOrder() {
         method="POST"
         className="space-y-8  border-2 bg-white shadow-md rounded-md p-6"
       >
-        <div>
+        <div className="w-72">
           {/* Username input */}
-          <div className="relative w-full  h-10">
+          <div className="relative w-full min-w-[200px] h-10">
             <input
               type="text"
               name="customer"
@@ -84,9 +84,9 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div>
+        <div className="w-72">
           {/* Phone input */}
-          <div className="relative w-full  h-10">
+          <div className="relative w-full min-w-[200px] h-10">
             <input
               className="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-400 placeholder-shown:border-t-blue-gray-400 border focus:border-2 border-t-transparent focus:border-t-transparent text-lg px-3 py-7 rounded-[7px] border-blue-gray-400 focus:border-gray-900"
               placeholder=" "
@@ -100,14 +100,14 @@ function CreateOrder() {
           </div>
         </div>
         {formErrors?.phone && (
-          <p className="text-sm  text-red-700 bg-red-100  px-4 py-1 rounded-md">
+          <p className="text-sm min-w-[200px] text-red-700 bg-red-100  px-4 py-1 rounded-md">
             {formErrors.phone}
           </p>
         )}
 
-        <div>
+        <div className="w-[450px]">
           {/* Address input */}
-          <div className="relative w-full  h-10">
+          <div className="relative w-full min-w-[200px] h-10">
             <input
               className="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-400 placeholder-shown:border-t-blue-gray-400 border focus:border-2 border-t-transparent focus:border-t-transparent text-lg px-3 py-7 rounded-[7px] border-blue-gray-400 focus:border-gray-900"
               placeholder=" "
@@ -136,7 +136,7 @@ function CreateOrder() {
         </div>
 
         {addressStatus === "error" && (
-          <p className="text-sm  text-red-700 bg-red-100  px-4 py-1 rounded-md">
+          <p className="text-sm min-w-[200px] text-red-700 bg-red-100  px-4 py-1 rounded-md">
             {errorAddress}
           </p>
         )}
