@@ -10,11 +10,11 @@ function CartItem({ item }) {
   const currentQuantity = useSelector(getCurrentQuantityById(id));
 
   return (
-    <li className="py-3 flex flex-col flex-wrap items-start justify-between">
+    <li className="py-3 sm:flex sm:items-center sm:justify-between">
       <p className="mb-1">
         {quantity}&times; {name}
       </p>
-      <div className=" flex self-stretch justify-between items-center gap-6">
+      <div className="flex justify-between items-center sm:gap-6">
         <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
 
         <UpdateItemQuantity id={id} currentQuantity={currentQuantity} />
