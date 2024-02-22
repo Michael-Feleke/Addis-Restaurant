@@ -14,8 +14,8 @@ function Cart() {
   }
 
   return (
-    <div className="min-w-[50%]  p-6 rounded-lg  h-full">
-      <h2 className="text-xl font-semibold text-center">
+    <div className="min-w-[50%]  p-6 rounded-lg  h-full medium:h-auto medium:bg-white medium:shadow-sm">
+      <h2 className="text-xl font-semibold text-center medium:text-start ">
         {cart.length === 0
           ? `Your cart is empty ${username}. Please back to menu and add some items to start ordering!`
           : `Your cart, ${username}`}
