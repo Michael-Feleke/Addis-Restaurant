@@ -6,13 +6,15 @@ function Home() {
   const { username } = useSelector((state) => state.user);
 
   return (
-    <div className="  mx-16 space-x-8 h-full medium:flex medium:justify-around medium:items-center">
+    <div className="  mx-16 space-x-8 medium:space-x-32 h-full medium:flex medium:justify-around medium:items-center">
       <div className="mt-10 h-auto">
-        <h1 className="text-stone-700 font-semibold text-center mb-8 text-2xl large:text-4xl xlarge:text-5xl">
+        <h1 className="text-stone-700 font-semibold text-center mb-8 text-2xl xlarge:text-5xl">
           Savor the Flavors.
           <br />
           <span className="text-yellow-400">
-            From our kitchen to your table.
+            From our kitchen direct
+            <br />
+            to your table.
           </span>
         </h1>
         {!username ? (

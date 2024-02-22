@@ -7,7 +7,6 @@ function SearchOder() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     query && navigation(`/order/${query}`);
   };
 
@@ -43,9 +42,11 @@ function SearchOder() {
         <input
           type="search"
           id="default-search"
-          className="block w-full large:p-3  p-1 ps-10 small:ps-8 large:ps-8 text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
+          className="block w-full large:p-3  p-1 ps-10 small:ps-8 large:ps-8 text-gray-900 border border-gray-300 rounded-lg bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
           placeholder="Search by order# ..."
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
         />
         <button
           type="submit"
