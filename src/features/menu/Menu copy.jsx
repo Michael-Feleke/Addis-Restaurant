@@ -7,9 +7,9 @@ function Menu() {
   const menu = useLoaderData();
 
   return (
-    <div className="flex items-center flex-col pb-10 h-full">
+    <div className="flex flex-col pb-10 h-full">
       <MenuNav />
-      <ul className="grid grid-cols-1 gap-12 max-h-full">
+      <ul className="grid grid-cols-3 gap-12 max-h-full">
         {menu.map((pizza) => (
           <MenuItem pizza={pizza} key={pizza.id} />
         ))}

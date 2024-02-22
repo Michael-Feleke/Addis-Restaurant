@@ -40,13 +40,13 @@ function SearchOder() {
         <input
           type="search"
           id="default-search"
-          className="block w-full  p-2 ps-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
+          className="block w-full  p-1 ps-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark: dark:focus:border-blue-500 text-base"
           placeholder="Search by order# ..."
           onChange={(e) => setQuery(e.target.value)}
         />
         <button
           type="submit"
-          className="text-black absolute end-2.5 bottom-[2px] right-[-1px] bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          className="text-black absolute end-2.5 bottom-[2px] right-[-1px] bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-2 py-1 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
         >
           Search
         </button>
