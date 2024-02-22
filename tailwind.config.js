@@ -7,9 +7,9 @@ export default {
       small: "500px",
       medium: "700px",
       large: "900px",
-      xlarge: "1024",
-      "2xlarge": "1280",
-      "3xlarge": "1536",
+      xlarge: "1024px",
+      "2xlarge": "1280px",
+      "3xlarge": "1536px",
     },
     fontFamily: {
       sans: "Roboto Mono, monospace",

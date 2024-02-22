@@ -19,19 +19,19 @@ function CreateUser() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-4 text-md text-center">
+      <p className="mb-4 large:mb-8 text-md text-center large:text-start">
         Welcome! We're thrilled to have you here! <br /> Please start by telling
         us your name:
       </p>
-      <div className="flex flex-col space-y-8 mb-8 items-center justify-center ">
+      <div className="flex flex-col space-y-8 mb-8 items-center justify-center large:flex-row large:space-x-8  large:space-y-0 large:justify-start ">
         <div className="w-72">
           {/* Username input */}
-          <div className="relative w-full min-w-[200px] h-10">
+          <div className="relative w-full min-w-[200px] h-10 large:h-full">
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 text-lg disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-400 placeholder-shown:border-t-blue-gray-400 border focus:border-2 border-t-transparent focus:border-t-transparent  px-3 py-7 rounded-[7px] border-slate-900 focus:border-gray-900"
+              className="peer w-full h-[80%] bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 text-lg disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-400 placeholder-shown:border-t-blue-gray-400 border focus:border-2 border-t-transparent focus:border-t-transparent  px-3 py-7 rounded-[7px] border-slate-900 focus:border-gray-900"
               placeholder=" "
               required
             />
