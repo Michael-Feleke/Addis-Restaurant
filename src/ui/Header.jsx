@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <header className="uppercase pt-2 flex justify-around items-center font-pizza bg-slate-900 flex-col gap-2">
-      <Link to="/" className="tracking-widest font-semibold text-md text-white">
+      <Link to="/" className="tracking-widest font-semibold text-lg text-white">
         Addis
         <span className="text-yellow-400"> Restaurant</span>
       </Link>
