@@ -48,7 +48,8 @@ const userSlice = createSlice({
       .addCase(fetchAddress.pending, (state) => (state.status = "loading"))
       .addCase(fetchAddress.fulfilled, (state, action) => {
         state.position = action.payload.position;
-        state.address = action.payload.address((state.status = "idle"));
+        state.address = action.payload.address;
+        state.status = "fulfulled";
       })
       .addCase(fetchAddress.rejected, (state, action) => {
         state.status = "error";
