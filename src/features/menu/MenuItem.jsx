@@ -27,14 +27,14 @@ function MenuItem({ pizza }) {
   return (
     <li>
       <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-60 ">
-        <div className="relative mx-4 mt-4  text-gray-700 bg-white bg-clip-border rounded-xl">
+        <div className="relative mx-auto mt-4 w-[80%] flex items-center justify-center text-gray-700 bg-white bg-clip-border rounded-xl">
           <img
             src={imageUrl}
             alt={name}
-            className={`object-cover w-full h-full ${soldOut ? "opacity-70 grayscale" : ""}`}
+            className={`object-cover w-full rounded-xl h-full ${soldOut ? "opacity-70 grayscale" : ""}`}
           />
         </div>
-        <div className="p-6 h-32">
+        <div className="p-6">
           <div className="flex items-center justify-between mb-2">
             <p className="block font-sans text-base antialiased font-bold leading-relaxed text-blue-gray-900">
               {name}
