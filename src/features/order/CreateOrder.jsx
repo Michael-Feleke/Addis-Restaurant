@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Form,
-  json,
-  redirect,
-  useActionData,
-  useNavigation,
-} from "react-router-dom";
+import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +41,6 @@ function CreateOrder() {
   function handleGetPosition(e) {
     e.preventDefault();
     dispatch(fetchAddress());
-    console.log(address);
   }
 
   if (!cart.length)
@@ -121,6 +114,7 @@ function CreateOrder() {
               type="text"
               name="address"
               disabled={isLoadingAddress}
+              defaultValue={address}
               required
             />
 
@@ -133,7 +127,6 @@ function CreateOrder() {
                   disabled={isLoadingAddress}
                   type="small"
                   onClick={handleGetPosition}
-                  defaultValue={address}
                 >
                   Get Position
                 </Button>
@@ -142,12 +135,11 @@ function CreateOrder() {
           </div>
         </div>
 
-        {addressStatus ===
-          "error"(
-            <p className="text-sm min-w-[200px] text-red-700 bg-red-100  px-4 py-1 rounded-md">
-              {errorAddress}
-            </p>
-          )}
+        {addressStatus === "error" && (
+          <p className="text-sm min-w-[200px] text-red-700 bg-red-100  px-4 py-1 rounded-md">
+            {errorAddress}
+          </p>
+        )}
 
         <div className="flex items-center space-x-2">
           {/* Checkbox for priority */}
@@ -180,7 +172,7 @@ function CreateOrder() {
           <Button disabled={isCreatingOrder || isLoadingAddress}>
             {isCreatingOrder
               ? "Placing order..."
-              : `Order now for $${formatCurrency(totalPrice)}`}
+              : `Order now for ${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
@@ -197,6 +189,8 @@ export async function action({ request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",
   };
+
+  console.log(order);
 
   const errors = {};
   if (!isValidPhone(order.phone))
