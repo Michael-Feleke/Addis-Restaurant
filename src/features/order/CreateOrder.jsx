@@ -21,7 +21,7 @@ const isValidPhone = (str) =>
   );
 
 function CreateOrder() {
-  // const [withPriority, setWithPriority] = useState(false);
+  const [withPriority, setWithPriority] = useState(false);
   const navigation = useNavigation();
   const isCreatingOrder = navigation.state === "submitting";
   const { username } = useSelector((state) => state.user);
@@ -31,7 +31,7 @@ function CreateOrder() {
   const cart = useSelector(getCart);
 
   const totalCartPrice = useSelector(getTotalCartPrice);
-  const priorityPrice = 0;
+  const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
 
   if (!cart.length)
@@ -116,6 +116,8 @@ function CreateOrder() {
           {/* Checkbox for priority */}
           <input
             className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
+            value={withPriority}
+            onChange={(e) => setWithPriority(e.target.checked)}
             type="checkbox"
             name="priority"
             id="priority"
@@ -147,7 +149,7 @@ export async function action({ request }) {
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
-    priority: data.priority === "on",
+    priority: data.priority === "true",
   };
 
   const errors = {};
