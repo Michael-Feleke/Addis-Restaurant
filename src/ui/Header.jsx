@@ -13,8 +13,11 @@ function Header() {
   const totalCartPrice = useSelector(getTotalCartPrice);
 
   return (
-    <header className="uppercase pt-2 flex justify-around items-center font-pizza bg-slate-900 flex-col gap-2">
-      <Link to="/" className="tracking-widest font-semibold text-lg text-white">
+    <header className="uppercase pt-2 flex justify-around items-center font-pizza bg-slate-900 flex-col small:flex-row small:px-10 small:py-6 gap-2">
+      <Link
+        to="/"
+        className="tracking-widest small:text-xl medium:text-2xl large:3xl font-semibold text-lg text-white"
+      >
         Addis
         <span className="text-yellow-400"> Restaurant</span>
       </Link>
