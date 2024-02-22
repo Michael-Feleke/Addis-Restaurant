@@ -41,11 +41,11 @@ function MenuItem({ pizza }) {
             </p>
             <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
               {!soldOut ? (
-                <p>{formatCurrency(unitPrice)}</p>
+                <span>{formatCurrency(unitPrice)}</span>
               ) : (
-                <p className="text-sm uppercase font-medium text-stone-500 line-through">
+                <span className="text-sm uppercase font-medium text-stone-500 line-through">
                   Sold out
-                </p>
+                </span>
               )}
             </p>
           </div>
@@ -62,7 +62,11 @@ function MenuItem({ pizza }) {
             </div>
           ) : (
             <Button
-              className="bg-yellow-400 rounded-full text-black "
+              className={
+                soldOut
+                  ? `bg-yellow-400 opacity-50 cursor-not-allowed rounded-full text-black`
+                  : "bg-yellow-400 rounded-full text-black"
+              }
               onClick={handleAddToCart}
               disabled={soldOut}
             >
