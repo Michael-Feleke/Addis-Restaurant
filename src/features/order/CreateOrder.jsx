@@ -9,8 +9,10 @@ import {
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import { useSelector } from "react-redux";
-import { getCart } from "../cart/cartSlice";
+import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import BackButton from "../../ui/BackButton";
+import store from "../../store";
+import { formatCurrency } from "../../utils/helpers";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -27,6 +29,10 @@ function CreateOrder() {
   const formErrors = useActionData();
 
   const cart = useSelector(getCart);
+
+  const totalCartPrice = useSelector(getTotalCartPrice);
+  const priorityPrice = 0;
+  const totalPrice = totalCartPrice + priorityPrice;
 
   if (!cart.length)
     return (
@@ -124,7 +130,9 @@ function CreateOrder() {
         <div className="text-center">
           {/* Submit button */}
           <Button disabled={isCreatingOrder}>
-            {isCreatingOrder ? "Placing order..." : "Order now"}
+            {isCreatingOrder
+              ? "Placing order..."
+              : `Order now for $${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
@@ -149,6 +157,8 @@ export async function action({ request }) {
 
   if (Object.keys(errors).length > 0) return errors;
   const newOrder = await createOrder(order);
+
+  store.dispatch(clearCart());
 
   return redirect(`/order/${newOrder.id}`);
 }
