@@ -6,8 +6,8 @@ function Home() {
   const { username } = useSelector((state) => state.user);
 
   return (
-    <div className="flex flex-col justify-around items-center mx-16 space-x-8 h-full mt-32">
-      <div>
+    <div className="flex flex-col-reverse justify-around items-center mx-16 space-x-8 h-full ">
+      <div className="h-full mt-10">
         <h1 className="text-stone-700 font-semibold text-center mb-8 text-2xl">
           Savor the Flavors.
           <br />
@@ -25,13 +25,13 @@ function Home() {
           </div>
         )}
       </div>
-      {/* <div className="flex justify-center items-center w-96 h-96 bg-yellow-400 rounded-full   shadow-lg">
+      <div className="hidden mb-10 flex justify-center items-center w-full h-full mt-96 bg-yellow-400 shadow-lg">
         <img
           src="/chefs.png"
           alt="chefs"
-          className=" w-80 h-80 object-cover rounded-full border-8 border-white"
+          className=" w-[85%] h-[85%] object-cover  border-8 border-white"
         />
-      </div> */}
+      </div>
     </div>
   );
 }
