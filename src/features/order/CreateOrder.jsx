@@ -107,7 +107,7 @@ function CreateOrder() {
 
         <div>
           {/* Address input */}
-          <div className="relative w-full  h-10">
+          <div className="relative w-full medium:min-w-[400px]  h-10">
             <input
               className="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-400 placeholder-shown:border-t-blue-gray-400 border focus:border-2 border-t-transparent focus:border-t-transparent text-lg px-3 py-7 rounded-[7px] border-blue-gray-400 focus:border-gray-900"
               placeholder=" "
@@ -122,7 +122,7 @@ function CreateOrder() {
               Address
             </label>
             {!position.latitude && !position.longitude && (
-              <span className="text absolute right-2 top-2 z-50">
+              <span className="text absolute right-2 medium:top-3 top-2 z-50">
                 <Button
                   disabled={isLoadingAddress}
                   type="small"
