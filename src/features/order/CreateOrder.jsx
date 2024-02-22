@@ -8,11 +8,12 @@ import {
 } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import BackButton from "../../ui/BackButton";
 import store from "../../store";
 import { formatCurrency } from "../../utils/helpers";
+import { fetchAddress } from "../user/userSlice";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -24,7 +25,15 @@ function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const navigation = useNavigation();
   const isCreatingOrder = navigation.state === "submitting";
-  const { username } = useSelector((state) => state.user);
+  const {
+    username,
+    status: addressStatus,
+    position,
+    address,
+  } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const isLoadingAddress = addressStatus === "loading";
 
   const formErrors = useActionData();
 
@@ -33,6 +42,11 @@ function CreateOrder() {
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
+
+  function handleGetPosition(e) {
+    e.preventDefault();
+    dispatch(fetchAddress());
+  }
 
   if (!cart.length)
     return (
@@ -96,7 +110,7 @@ function CreateOrder() {
           </p>
         )}
 
-        <div className="w-96">
+        <div className="w-[450px]">
           {/* Address input */}
           <div className="relative w-full min-w-[200px] h-10">
             <input
@@ -104,11 +118,24 @@ function CreateOrder() {
               placeholder=" "
               type="text"
               name="address"
+              disabled={isLoadingAddress}
               required
             />
             <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[14px] peer-focus:text-[14px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-400 peer-focus:before:!border-gray-900 after:border-blue-gray-400 peer-focus:after:!border-gray-900">
               Address
             </label>
+            {!position.latitude && !position.longitude && (
+              <span className="text absolute right-2 top-2 z-50">
+                <Button
+                  disabled={isLoadingAddress}
+                  type="small"
+                  onClick={handleGetPosition}
+                  defaultValue={address}
+                >
+                  Get Position
+                </Button>
+              </span>
+            )}
           </div>
         </div>
 
@@ -131,7 +158,7 @@ function CreateOrder() {
 
         <div className="text-center">
           {/* Submit button */}
-          <Button disabled={isCreatingOrder}>
+          <Button disabled={isCreatingOrder || isLoadingAddress}>
             {isCreatingOrder
               ? "Placing order..."
               : `Order now for $${formatCurrency(totalPrice)}`}
